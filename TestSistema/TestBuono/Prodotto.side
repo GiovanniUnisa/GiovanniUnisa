@@ -1,0 +1,1053 @@
+{
+  "id": "cf6f87d7-0b93-4463-aab4-b98984557bcb",
+  "version": "2.0",
+  "name": "EMC",
+  "url": "http://localhost:8080/EMC_war_exploded/",
+  "tests": [{
+    "id": "6a60310d-2349-4ec9-9651-6b3bf59aaa44",
+    "name": "UpdateProduct_True",
+    "commands": [{
+      "id": "2fc4eaf0-a8d7-461c-8eec-7ebcae43b02c",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EMC_war_exploded/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aaea3307-ef81-4113-96f3-066769b02907",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b17f9b90-43a5-4347-82b6-dd3e869e96df",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Bronzo",
+      "targets": [
+        ["linkText=Bronzo", "linkText"],
+        ["css=ul:nth-child(2) > li:nth-child(2) > .a:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Bronzo')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Categoria?id=4')]", "xpath:href"],
+        ["xpath=//li[4]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Bronzo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3867f58a-668a-41d2-8758-3ca14262ae87",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Bronzo Alluminio",
+      "targets": [
+        ["linkText=Bronzo Alluminio", "linkText"],
+        ["css=div:nth-child(2) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Bronzo Alluminio')]", "xpath:link"],
+        ["xpath=(//a[contains(@href, 'Prodotto?id=12')])[2]", "xpath:href"],
+        ["xpath=//h3/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Bronzo Alluminio')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "85608fa1-164e-491b-92bc-9d5b023b58c1",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(2)",
+      "targets": [
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value='Modifica']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d9029d9-2b83-4ed9-b103-323624c0456e",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(5)",
+      "targets": [
+        ["css=input:nth-child(5)", "css:finder"],
+        ["xpath=(//input[@name='categorie'])[2]", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d4a16ee4-3c58-418d-8396-2abb8e05c4bc",
+      "comment": "",
+      "command": "click",
+      "target": "name=nome",
+      "targets": [
+        ["name=nome", "name"],
+        ["css=input:nth-child(14)", "css:finder"],
+        ["xpath=//input[@name='nome']", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "92b81005-c267-475f-9d16-e78be3d47ee7",
+      "comment": "",
+      "command": "type",
+      "target": "name=nome",
+      "targets": [
+        ["name=nome", "name"],
+        ["css=input:nth-child(14)", "css:finder"],
+        ["xpath=//input[@name='nome']", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "Bronzo Alluminio 2"
+    }, {
+      "id": "0609e58e-2aed-4576-9ea4-71c39edeb2cf",
+      "comment": "",
+      "command": "type",
+      "target": "name=descrizione",
+      "targets": [
+        ["name=descrizione", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='descrizione']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Nuova Descrizione"
+    }, {
+      "id": "f7cf8709-d502-4982-81e0-ec21dfef03ee",
+      "comment": "",
+      "command": "type",
+      "target": "name=prezzoCent",
+      "targets": [
+        ["name=prezzoCent", "name"],
+        ["css=input:nth-child(18)", "css:finder"],
+        ["xpath=//input[@name='prezzoCent']", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "1067"
+    }, {
+      "id": "26181fcf-a28f-48fa-bbd6-9e8702aee447",
+      "comment": "",
+      "command": "type",
+      "target": "name=iva",
+      "targets": [
+        ["name=iva", "name"],
+        ["css=input:nth-child(20)", "css:finder"],
+        ["xpath=//input[@name='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "22"
+    }, {
+      "id": "91c2cfc2-2002-4bb7-8daf-46f1a2796a5b",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(21)",
+      "targets": [
+        ["css=input:nth-child(21)", "css:finder"],
+        ["xpath=//input[@value='Aggiungi']", "xpath:attributes"],
+        ["xpath=//input[10]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4dbe8071-8f00-47b4-8eda-626b15c97151",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Bronzo",
+      "targets": [
+        ["linkText=Bronzo", "linkText"],
+        ["css=ul:nth-child(2) > li:nth-child(2) > .a:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Bronzo')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Categoria?id=4')]", "xpath:href"],
+        ["xpath=//li[4]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Bronzo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2d9c9ab5-1890-49b4-a7c3-68ddc7a09f25",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Bronzo Alluminio 2",
+      "targets": [
+        ["linkText=Bronzo Alluminio 2", "linkText"],
+        ["css=div:nth-child(8) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Bronzo Alluminio 2')]", "xpath:link"],
+        ["xpath=(//a[contains(@href, 'Prodotto?id=19')])[2]", "xpath:href"],
+        ["xpath=//div[8]/h3/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Bronzo Alluminio 2')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "9aa91dda-9ed1-43c1-aded-ac1c1765441c",
+    "name": "AddProduct_True",
+    "commands": [{
+      "id": "3ef50fe6-9b7d-44db-bd9c-df04845158fc",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EMC_war_exploded/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "080a35ec-eaa9-4792-a048-f569a8b0ed9f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4900a846-b217-4483-a979-1dcd426e7a5f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Aggiungi Prodotto",
+      "targets": [
+        ["linkText=Aggiungi Prodotto", "linkText"],
+        ["css=.utente1 > li:nth-child(3) > .a", "css:finder"],
+        ["xpath=//a[contains(text(),'Aggiungi Prodotto')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'AdminProdotto')]", "xpath:href"],
+        ["xpath=//li[2]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Aggiungi Prodotto')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "854ecd36-bd29-49c5-8deb-8e5b78ac682f",
+      "comment": "",
+      "command": "click",
+      "target": "name=categorie",
+      "targets": [
+        ["name=categorie", "name"],
+        ["css=form > input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='categorie']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e4f0a310-978b-4196-9c34-6bbbb920de4a",
+      "comment": "",
+      "command": "click",
+      "target": "name=nome",
+      "targets": [
+        ["name=nome", "name"],
+        ["css=input:nth-child(14)", "css:finder"],
+        ["xpath=//input[@name='nome']", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c8e4aec9-ce7f-402a-9ccd-71808cbf3d1b",
+      "comment": "",
+      "command": "type",
+      "target": "name=nome",
+      "targets": [
+        ["name=nome", "name"],
+        ["css=input:nth-child(14)", "css:finder"],
+        ["xpath=//input[@name='nome']", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "Aggiunta nuovo Prodotto"
+    }, {
+      "id": "941b3fc7-cd78-48e0-a39a-c2514c476649",
+      "comment": "",
+      "command": "type",
+      "target": "name=descrizione",
+      "targets": [
+        ["name=descrizione", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='descrizione']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Nuova Descrizione"
+    }, {
+      "id": "a44341f0-b151-4428-a1da-8cd1f3df4a63",
+      "comment": "",
+      "command": "type",
+      "target": "name=prezzoCent",
+      "targets": [
+        ["name=prezzoCent", "name"],
+        ["css=input:nth-child(18)", "css:finder"],
+        ["xpath=//input[@name='prezzoCent']", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "1066"
+    }, {
+      "id": "1c7d8721-e06d-42d8-bbd1-c55391722d92",
+      "comment": "",
+      "command": "type",
+      "target": "name=iva",
+      "targets": [
+        ["name=iva", "name"],
+        ["css=input:nth-child(20)", "css:finder"],
+        ["xpath=//input[@name='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "22"
+    }, {
+      "id": "c05a86d9-4e0a-4af1-832d-ba68338603fb",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(21)",
+      "targets": [
+        ["css=input:nth-child(21)", "css:finder"],
+        ["xpath=//input[@value='Aggiungi']", "xpath:attributes"],
+        ["xpath=//input[10]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "49434ec8-ca4b-4a37-9477-a1bacd102efa",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Rame",
+      "targets": [
+        ["linkText=Rame", "linkText"],
+        ["css=li:nth-child(1) > .a", "css:finder"],
+        ["xpath=//a[contains(text(),'Rame')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Categoria?id=3')]", "xpath:href"],
+        ["xpath=//li[4]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Rame')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c36e0096-ef7d-4d02-8b3d-2c6f26bff67d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Aggiunta nuovo Prodotto",
+      "targets": [
+        ["linkText=Aggiunta nuovo Prodotto", "linkText"],
+        ["css=div:nth-child(6) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Aggiunta nuovo Prodotto')]", "xpath:link"],
+        ["xpath=(//a[contains(@href, 'Prodotto?id=18')])[2]", "xpath:href"],
+        ["xpath=//div[6]/h3/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Aggiunta nuovo Prodotto')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f4c20400-1382-467d-b62f-20286c17c388",
+    "name": "Add/UpdateProduct_DescriptionNotValid",
+    "commands": [{
+      "id": "c546960d-92f0-428d-bfe8-9867b696ad1d",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EMC_war_exploded/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a07ffc61-9f0f-41ce-a1a1-8aadb3d562f4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ccd56edb-1f1d-421e-bddf-88cf43cbb3d5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Aggiungi Prodotto",
+      "targets": [
+        ["linkText=Aggiungi Prodotto", "linkText"],
+        ["css=.utente1 > li:nth-child(3) > .a", "css:finder"],
+        ["xpath=//a[contains(text(),'Aggiungi Prodotto')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'AdminProdotto')]", "xpath:href"],
+        ["xpath=//li[2]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Aggiungi Prodotto')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe31068c-4cef-439f-9ba1-155be1749748",
+      "comment": "",
+      "command": "click",
+      "target": "name=categorie",
+      "targets": [
+        ["name=categorie", "name"],
+        ["css=form > input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='categorie']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1df1e70c-7b75-4595-9079-c8b0afd72c37",
+      "comment": "",
+      "command": "click",
+      "target": "name=nome",
+      "targets": [
+        ["name=nome", "name"],
+        ["css=input:nth-child(14)", "css:finder"],
+        ["xpath=//input[@name='nome']", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3d0d3a31-cc95-4104-9634-cd21e7c36356",
+      "comment": "",
+      "command": "type",
+      "target": "name=nome",
+      "targets": [
+        ["name=nome", "name"],
+        ["css=input:nth-child(14)", "css:finder"],
+        ["xpath=//input[@name='nome']", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "Nuovo Prodotto"
+    }, {
+      "id": "53a28b90-8441-465c-87fe-72226bdf0133",
+      "comment": "",
+      "command": "click",
+      "target": "name=prezzoCent",
+      "targets": [
+        ["name=prezzoCent", "name"],
+        ["css=input:nth-child(18)", "css:finder"],
+        ["xpath=//input[@name='prezzoCent']", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce47cee8-2293-4ea4-ad8f-b14a23bddd6f",
+      "comment": "",
+      "command": "type",
+      "target": "name=prezzoCent",
+      "targets": [
+        ["name=prezzoCent", "name"],
+        ["css=input:nth-child(18)", "css:finder"],
+        ["xpath=//input[@name='prezzoCent']", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "1014"
+    }, {
+      "id": "c74c50c6-f06d-4981-8363-ae7df5f6d005",
+      "comment": "",
+      "command": "type",
+      "target": "name=iva",
+      "targets": [
+        ["name=iva", "name"],
+        ["css=input:nth-child(20)", "css:finder"],
+        ["xpath=//input[@name='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "10"
+    }, {
+      "id": "bb7b9390-7cec-4230-9dc5-4ed9e5c869d0",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(21)",
+      "targets": [
+        ["css=input:nth-child(21)", "css:finder"],
+        ["xpath=//input[@value='Aggiungi']", "xpath:attributes"],
+        ["xpath=//input[10]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "a13d1c91-091c-47c8-b4fa-5de1d82c11c2",
+    "name": "Add/UpdateProduct_NameNotValid",
+    "commands": [{
+      "id": "dff71571-eb0d-454c-9ab9-5a05b4b1dd61",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EMC_war_exploded/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9cdabe55-1cbc-40d6-be2b-c51d6d3b0a30",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a86bdd0e-7eb0-4677-9a30-3a430a4c0ded",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Aggiungi Prodotto",
+      "targets": [
+        ["linkText=Aggiungi Prodotto", "linkText"],
+        ["css=.utente1 > li:nth-child(3) > .a", "css:finder"],
+        ["xpath=//a[contains(text(),'Aggiungi Prodotto')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'AdminProdotto')]", "xpath:href"],
+        ["xpath=//li[2]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Aggiungi Prodotto')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "234121bf-8252-4160-8e4a-4348c5b9a9a7",
+      "comment": "",
+      "command": "click",
+      "target": "name=categorie",
+      "targets": [
+        ["name=categorie", "name"],
+        ["css=form > input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='categorie']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "07ebf683-1d6a-4fce-84f3-37b59853f4f4",
+      "comment": "",
+      "command": "click",
+      "target": "name=nome",
+      "targets": [
+        ["name=nome", "name"],
+        ["css=input:nth-child(14)", "css:finder"],
+        ["xpath=//input[@name='nome']", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1ffa74bd-f7d7-473b-805c-89a24637c0b8",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "02e0f005-dba3-4508-821b-0ac8c351bfe3",
+      "comment": "",
+      "command": "click",
+      "target": "name=descrizione",
+      "targets": [
+        ["name=descrizione", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='descrizione']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3875b42a-73ab-4dc1-aee5-e8d7b70b4a35",
+      "comment": "",
+      "command": "type",
+      "target": "name=descrizione",
+      "targets": [
+        ["name=descrizione", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='descrizione']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Descrizione"
+    }, {
+      "id": "a01e94ce-d665-460f-a868-ba0464ef0a1a",
+      "comment": "",
+      "command": "click",
+      "target": "name=prezzoCent",
+      "targets": [
+        ["name=prezzoCent", "name"],
+        ["css=input:nth-child(18)", "css:finder"],
+        ["xpath=//input[@name='prezzoCent']", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce5740c6-7db3-429f-af51-bc1dd7ff8bc7",
+      "comment": "",
+      "command": "type",
+      "target": "name=prezzoCent",
+      "targets": [
+        ["name=prezzoCent", "name"],
+        ["css=input:nth-child(18)", "css:finder"],
+        ["xpath=//input[@name='prezzoCent']", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "1025"
+    }, {
+      "id": "5f49c4e4-43b3-4340-8826-300870e2df04",
+      "comment": "",
+      "command": "click",
+      "target": "name=iva",
+      "targets": [
+        ["name=iva", "name"],
+        ["css=input:nth-child(20)", "css:finder"],
+        ["xpath=//input[@name='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0d37f2e5-7fc1-451f-a951-f12429481394",
+      "comment": "",
+      "command": "type",
+      "target": "name=iva",
+      "targets": [
+        ["name=iva", "name"],
+        ["css=input:nth-child(20)", "css:finder"],
+        ["xpath=//input[@name='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "7c0d02c9-ad9d-4a72-bd01-544fd4d785b3",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(3)",
+      "targets": [
+        ["css=form:nth-child(3)", "css:finder"],
+        ["xpath=//form[@action='AdminProdotto']", "xpath:attributes"],
+        ["xpath=//section/form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c3c5a8e-5c2b-4204-94d7-3c78ae7e7b2b",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(21)",
+      "targets": [
+        ["css=input:nth-child(21)", "css:finder"],
+        ["xpath=//input[@value='Aggiungi']", "xpath:attributes"],
+        ["xpath=//input[10]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "44b47cc0-c3aa-48fd-ba32-9d3b1b16e4fb",
+    "name": "AddProduct_AlreadyExistingProduct",
+    "commands": [{
+      "id": "4c2018ce-4686-41c4-aeac-cfafdb5b6fdc",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EMC_war_exploded/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0255c6a3-ce4c-4aed-b14f-5db0e557f47f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "79e4f78a-c9fa-4e69-88dc-46f9ee889cc6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Aggiungi Prodotto",
+      "targets": [
+        ["linkText=Aggiungi Prodotto", "linkText"],
+        ["css=.utente1 > li:nth-child(3) > .a", "css:finder"],
+        ["xpath=//a[contains(text(),'Aggiungi Prodotto')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'AdminProdotto')]", "xpath:href"],
+        ["xpath=//li[2]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Aggiungi Prodotto')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f8033ffe-c604-458f-8062-cff33577ae86",
+      "comment": "",
+      "command": "click",
+      "target": "name=categorie",
+      "targets": [
+        ["name=categorie", "name"],
+        ["css=form > input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='categorie']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fae33ff2-e9f1-4727-b290-04e6cbfa296b",
+      "comment": "",
+      "command": "click",
+      "target": "name=nome",
+      "targets": [
+        ["name=nome", "name"],
+        ["css=input:nth-child(14)", "css:finder"],
+        ["xpath=//input[@name='nome']", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6946e759-fd4c-4487-9b5e-fee6aae6c03a",
+      "comment": "",
+      "command": "type",
+      "target": "name=nome",
+      "targets": [
+        ["name=nome", "name"],
+        ["css=input:nth-child(14)", "css:finder"],
+        ["xpath=//input[@name='nome']", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "Rame"
+    }, {
+      "id": "e039c81e-1e90-490b-a8e8-3c09c19a8a03",
+      "comment": "",
+      "command": "type",
+      "target": "name=descrizione",
+      "targets": [
+        ["name=descrizione", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='descrizione']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Descrizione"
+    }, {
+      "id": "ec78d8aa-fb26-4109-a8b7-922c489993e8",
+      "comment": "",
+      "command": "type",
+      "target": "name=prezzoCent",
+      "targets": [
+        ["name=prezzoCent", "name"],
+        ["css=input:nth-child(18)", "css:finder"],
+        ["xpath=//input[@name='prezzoCent']", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "1025"
+    }, {
+      "id": "5d84029e-c763-4d82-80c6-695bbfc60c13",
+      "comment": "",
+      "command": "type",
+      "target": "name=iva",
+      "targets": [
+        ["name=iva", "name"],
+        ["css=input:nth-child(20)", "css:finder"],
+        ["xpath=//input[@name='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "22"
+    }, {
+      "id": "37863c45-3a9f-42f8-9e32-26ce6484050b",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(21)",
+      "targets": [
+        ["css=input:nth-child(21)", "css:finder"],
+        ["xpath=//input[@value='Aggiungi']", "xpath:attributes"],
+        ["xpath=//input[10]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "faba2ed2-6c31-45e0-b524-08a2cd3fedde",
+      "comment": "",
+      "command": "click",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Il prodotto che vuoi aggiungere è gia presente! Riprova.')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "36885739-9a46-4988-b2a2-abc9bd11a9e4",
+    "name": "DeleteProduct_True",
+    "commands": [{
+      "id": "23002652-cc67-416f-bf84-f72b43ec1e33",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EMC_war_exploded/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eecb5511-b577-4076-888b-29db366710f3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ee9c1642-7e2b-46c6-b82f-e21a0749790b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Rame",
+      "targets": [
+        ["linkText=Rame", "linkText"],
+        ["css=li:nth-child(1) > .a", "css:finder"],
+        ["xpath=//a[contains(text(),'Rame')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Categoria?id=3')]", "xpath:href"],
+        ["xpath=//li[4]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Rame')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "71c8fd9d-813a-4f55-9bf7-faf86b1420bb",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Aggiunta nuovo Prodotto",
+      "targets": [
+        ["linkText=Aggiunta nuovo Prodotto", "linkText"],
+        ["css=div:nth-child(6) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Aggiunta nuovo Prodotto')]", "xpath:link"],
+        ["xpath=(//a[contains(@href, 'Prodotto?id=18')])[2]", "xpath:href"],
+        ["xpath=//div[6]/h3/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Aggiunta nuovo Prodotto')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1ef7f37-5ef8-4c3e-9b12-0befa4858c7a",
+      "comment": "",
+      "command": "click",
+      "target": "name=rimuovi",
+      "targets": [
+        ["name=rimuovi", "name"],
+        ["css=form:nth-child(1) > input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='rimuovi']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b4e80126-6aa1-444c-94e3-c13b861c580d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Rame",
+      "targets": [
+        ["linkText=Rame", "linkText"],
+        ["css=li:nth-child(1) > .a", "css:finder"],
+        ["xpath=//a[contains(text(),'Rame')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'Categoria?id=3')]", "xpath:href"],
+        ["xpath=//li[4]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Rame')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "2fd8969e-0cec-487b-8de3-17b344939f2b",
+    "name": "Add/UpdateProduct_PrezzoNotValid",
+    "commands": [{
+      "id": "da5600a2-24b9-42f9-9f5c-4db811c4874c",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EMC_war_exploded/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ead52613-9d31-4866-8fac-44cbb3d0051b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "de4014c3-de64-4a91-99df-2fa5ecfebfb5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Aggiungi Prodotto",
+      "targets": [
+        ["linkText=Aggiungi Prodotto", "linkText"],
+        ["css=.utente1 > li:nth-child(3) > .a", "css:finder"],
+        ["xpath=//a[contains(text(),'Aggiungi Prodotto')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'AdminProdotto')]", "xpath:href"],
+        ["xpath=//li[2]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Aggiungi Prodotto')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d20c87b6-821a-4eef-b3a4-9423d855c656",
+      "comment": "",
+      "command": "click",
+      "target": "name=categorie",
+      "targets": [
+        ["name=categorie", "name"],
+        ["css=form > input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='categorie']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8e346ede-d210-4cde-b361-789c6b646033",
+      "comment": "",
+      "command": "click",
+      "target": "name=nome",
+      "targets": [
+        ["name=nome", "name"],
+        ["css=input:nth-child(14)", "css:finder"],
+        ["xpath=//input[@name='nome']", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2205c31a-afa8-40f3-9109-c4c2e0bea92c",
+      "comment": "",
+      "command": "type",
+      "target": "name=nome",
+      "targets": [
+        ["name=nome", "name"],
+        ["css=input:nth-child(14)", "css:finder"],
+        ["xpath=//input[@name='nome']", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "Product"
+    }, {
+      "id": "e58e335b-a7aa-4db2-8e00-ecb450ee7821",
+      "comment": "",
+      "command": "type",
+      "target": "name=descrizione",
+      "targets": [
+        ["name=descrizione", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='descrizione']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Descrizone"
+    }, {
+      "id": "b0cbed7b-ea2c-43cf-a946-eb589d1c9f73",
+      "comment": "",
+      "command": "click",
+      "target": "name=iva",
+      "targets": [
+        ["name=iva", "name"],
+        ["css=input:nth-child(20)", "css:finder"],
+        ["xpath=//input[@name='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "67a4cbc3-95be-4af8-b18f-630c14510345",
+      "comment": "",
+      "command": "type",
+      "target": "name=iva",
+      "targets": [
+        ["name=iva", "name"],
+        ["css=input:nth-child(20)", "css:finder"],
+        ["xpath=//input[@name='iva']", "xpath:attributes"],
+        ["xpath=//input[9]", "xpath:position"]
+      ],
+      "value": "111"
+    }, {
+      "id": "01a00866-fa79-43e5-98de-30c101a16f0c",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(21)",
+      "targets": [
+        ["css=input:nth-child(21)", "css:finder"],
+        ["xpath=//input[@value='Aggiungi']", "xpath:attributes"],
+        ["xpath=//input[10]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "0a0218ef-989c-441a-aba8-fff7645f4a7e",
+    "name": "Add/UpdateProduct_IvaNotValid",
+    "commands": [{
+      "id": "c84a4b7e-5c5e-4609-981f-37b93c6ce1f2",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/EMC_war_exploded/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7bf22755-a592-4694-a960-2387836767d1",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c7163582-567b-4c56-a1b3-85209aa09be2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Aggiungi Prodotto",
+      "targets": [
+        ["linkText=Aggiungi Prodotto", "linkText"],
+        ["css=.utente1 > li:nth-child(3) > .a", "css:finder"],
+        ["xpath=//a[contains(text(),'Aggiungi Prodotto')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'AdminProdotto')]", "xpath:href"],
+        ["xpath=//li[2]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Aggiungi Prodotto')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd8a6a38-f43f-4875-a543-eff79586a340",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(3)",
+      "targets": [
+        ["css=form:nth-child(3)", "css:finder"],
+        ["xpath=//form[@action='AdminProdotto']", "xpath:attributes"],
+        ["xpath=//section/form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "71b7d740-afe1-4b71-8552-5757a8d5c9db",
+      "comment": "",
+      "command": "click",
+      "target": "name=categorie",
+      "targets": [
+        ["name=categorie", "name"],
+        ["css=form > input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='categorie']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "08c2753f-d7e0-43ac-bdaf-5faa19e9ab3b",
+      "comment": "",
+      "command": "click",
+      "target": "name=nome",
+      "targets": [
+        ["name=nome", "name"],
+        ["css=input:nth-child(14)", "css:finder"],
+        ["xpath=//input[@name='nome']", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f650180-8c0e-44c0-89b2-76954a95322d",
+      "comment": "",
+      "command": "type",
+      "target": "name=nome",
+      "targets": [
+        ["name=nome", "name"],
+        ["css=input:nth-child(14)", "css:finder"],
+        ["xpath=//input[@name='nome']", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": "Nuovo Prodotto 2"
+    }, {
+      "id": "b8f00758-5c97-4750-b837-3f0e80571e24",
+      "comment": "",
+      "command": "click",
+      "target": "name=descrizione",
+      "targets": [
+        ["name=descrizione", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='descrizione']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "69920449-b351-422a-8d36-79c53189651c",
+      "comment": "",
+      "command": "type",
+      "target": "name=descrizione",
+      "targets": [
+        ["name=descrizione", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='descrizione']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Descrizione "
+    }, {
+      "id": "683cdbd2-4ca3-40bc-b859-3a5d6a971eae",
+      "comment": "",
+      "command": "click",
+      "target": "name=prezzoCent",
+      "targets": [
+        ["name=prezzoCent", "name"],
+        ["css=input:nth-child(18)", "css:finder"],
+        ["xpath=//input[@name='prezzoCent']", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b71ffea-faf3-4aab-8634-f511b4919ad1",
+      "comment": "",
+      "command": "type",
+      "target": "name=prezzoCent",
+      "targets": [
+        ["name=prezzoCent", "name"],
+        ["css=input:nth-child(18)", "css:finder"],
+        ["xpath=//input[@name='prezzoCent']", "xpath:attributes"],
+        ["xpath=//input[8]", "xpath:position"]
+      ],
+      "value": "1024"
+    }, {
+      "id": "5abdd8aa-a745-4d61-b4f6-133175fadc9c",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(21)",
+      "targets": [
+        ["css=input:nth-child(21)", "css:finder"],
+        ["xpath=//input[@value='Aggiungi']", "xpath:attributes"],
+        ["xpath=//input[10]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "c81610d9-f528-496f-b53a-faa4905a0fb5",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["6a60310d-2349-4ec9-9651-6b3bf59aaa44"]
+  }],
+  "urls": ["http://localhost:8080/", "http://localhost:8080/EMC_war_exploded/"],
+  "plugins": []
+}
