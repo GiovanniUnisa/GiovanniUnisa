@@ -32,8 +32,6 @@ public class CarrelloServlet extends HttpServlet {
         if (carrello == null) {
             carrello = new Carrello();
             session.setAttribute("carrello", carrello);
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/jsp/carrello.jsp");
-            requestDispatcher.forward(request, response);
         }
 
         String prodIdStr = request.getParameter("prodId");
@@ -67,11 +65,11 @@ public class CarrelloServlet extends HttpServlet {
 
                 }
             }
-
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/jsp/carrello.jsp");
-            requestDispatcher.forward(request, response);
         }
 
-
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/jsp/carrello.jsp");
+        requestDispatcher.forward(request, response);
     }
+
+
 }
