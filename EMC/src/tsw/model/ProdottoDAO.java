@@ -229,6 +229,79 @@ public class ProdottoDAO {
         }
     }
 
+    public Prodotto doRetrieveByNome1(String nome) {
+        try (Connection con = ConPool.getConnection()) {
+            PreparedStatement ps = con.prepareStatement(
+                    "SELECT nome FROM prodotto WHERE nome =?");
+            ps.setString(1, nome);
+            Prodotto prodotto;
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                Prodotto p = new Prodotto();
+                p.setNome(rs.getString(1));
+                return p;
+            }
+            return null;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    public Prodotto doRetrieveByDescrizione(String descrizione) {
+        try (Connection con = ConPool.getConnection()) {
+            PreparedStatement ps = con.prepareStatement(
+                    "SELECT descrizione FROM prodotto WHERE descrizione =?");
+            ps.setString(1, descrizione);
+            Prodotto prodotto;
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                Prodotto p = new Prodotto();
+                p.setDescrizione(rs.getString(1));
+                return p;
+            }
+            return null;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Prodotto doRetrieveByPrezzo(long prezzo) {
+        try (Connection con = ConPool.getConnection()) {
+            PreparedStatement ps = con.prepareStatement(
+                    "SELECT prezzoBase FROM prodotto WHERE prezzoBase =?");
+            ps.setLong(1, prezzo);
+            Prodotto prodotto;
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                Prodotto p = new Prodotto();
+                p.setPrezzoBase(rs.getLong(1));
+                return p;
+            }
+            return null;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    public Prodotto doRetrieveByIva(int iva) {
+        try (Connection con = ConPool.getConnection()) {
+            PreparedStatement ps = con.prepareStatement(
+                    "SELECT iva FROM prodotto WHERE iva =?");
+            ps.setInt(1, iva);
+            Prodotto prodotto;
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                Prodotto p = new Prodotto();
+                p.setIva(rs.getInt(1));
+                return p;
+            }
+            return null;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public List<Prodotto> doRetrieveByNomeOrDescrizione(String against) {
         try (Connection con = ConPool.getConnection()) {

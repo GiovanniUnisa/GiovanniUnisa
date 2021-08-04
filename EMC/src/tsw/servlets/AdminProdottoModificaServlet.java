@@ -83,6 +83,11 @@ public class AdminProdottoModificaServlet extends HttpServlet {
                         return c;
                     }).collect(Collectors.toList()) : Collections.emptyList());
 
+                    if ((prodottoDAO.doRetrieveByNomeSingolo(nome) != null) && (prodottoDAO.doRetrieveByDescrizione(descrizione) != null)
+                            && (prodottoDAO.doRetrieveByPrezzo(Long.parseLong(prezzoCent)) != null) && (prodottoDAO.doRetrieveByIva(Integer.parseInt(iv)) != null)) {
+                        throw new MyServletException("Non hai modificato alcun parametro! Riprova");
+                    }
+
                     prodotto.setId(Integer.parseInt(idstr));
                     prodottoDAO.doUpdate(prodotto);
                     request.setAttribute("notifica", "Il prodotto è stato modificato con successo.");
