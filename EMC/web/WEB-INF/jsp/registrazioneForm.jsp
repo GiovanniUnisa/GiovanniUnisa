@@ -30,7 +30,7 @@
 		var passwordOk = false;
 		var nomeOk = false;
 		var emailOk = false;
-	
+
 		function validaUsername() {
 			var input = document.forms['registrazione']['username'];
 			if (input.value.length >= 6 && input.value.match(/^[0-9a-zA-Z]+$/)) {
@@ -56,7 +56,7 @@
 				cambiaStatoRegistrami();
 			}
 		}
-	
+
 		function validaPassword() {
 			var inputpw = document.forms['registrazione']['password'];
 			var inputpwconf = document.forms['registrazione']['passwordConferma'];
@@ -64,7 +64,7 @@
 			if (password.length >= 8 && password.toUpperCase() != password
 					&& password.toLowerCase() != password && /[0-9]/.test(password)) {
 				inputpw.style.border = borderOk;
-	
+
 				if (password == inputpwconf.value) {
 					inputpwconf.style.border = borderOk;
 					passwordOk = true;
@@ -79,7 +79,7 @@
 			}
 			cambiaStatoRegistrami();
 		}
-	
+
 		function validaNome() {
 			var input = document.forms['registrazione']['nome'];
 			if (input.value.trim().length > 0
@@ -92,19 +92,43 @@
 			}
 			cambiaStatoRegistrami();
 		}
-	
+
 		function validaEmail() {
 			var input = document.forms['registrazione']['email'];
 			if (input.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w+)+$/)) {
-				input.style.border = borderOk;
-				emailOk = true;
+
+                var xmlHttpReq = new XMLHttpRequest();
+                xmlHttpReq.onreadystatechange = function() {
+
+                    if (this.readyState == 4 && this.status == 200
+                        && this.responseText == '<ok/>') {
+						emailOk = true;
+                    	input.style.border = borderOk;
+                    } else {
+                        input.style.border = borderNo;
+                        emailOk = false;
+                    }
+                    cambiaStatoRegistrami();
+                }
+                xmlHttpReq.open("GET", "VerificaEmail?email="
+                    + encodeURIComponent(input.value), true);
+                xmlHttpReq.send();
+
+
 			} else {
 				input.style.border = borderNo;
 				emailOk = false;
 			}
 			cambiaStatoRegistrami();
 		}
-	
+
+
+
+
+
+
+
+
 		function cambiaStatoRegistrami() {
 			if (usernameOk && passwordOk && nomeOk && emailOk) {
 				document.getElementById('registrami').disabled = false;
