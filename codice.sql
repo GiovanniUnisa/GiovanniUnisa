@@ -47,17 +47,10 @@ CREATE TABLE prodotto_categoria (
 CREATE TABLE ordine(
 id int not null primary key auto_increment,
 prezzo varchar(45),
-indirizzo varchar(45) not null
+indirizzo varchar(45) not null,
+id_utente int,
+CONSTRAINT FOREIGN KEY (id_utente) REFERENCES utente (id) ON DELETE CASCADE ON UPDATE CASCADE
 );
-
-CREATE TABLE utente_ordine (
-  idutente int(11) not null,
-  idordine int(11) not null,
-  PRIMARY KEY (idutente,idordine),
-  CONSTRAINT FOREIGN KEY (idutente) REFERENCES utente (id) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT FOREIGN KEY (idordine) REFERENCES ordine (id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
 
 LOCK TABLES prodotto WRITE;
 INSERT INTO prodotto
