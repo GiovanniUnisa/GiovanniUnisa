@@ -119,7 +119,7 @@ public class UtenteDAO {
     }
 
 
-    public void doSave(Utente utente) {
+    public boolean doSave(Utente utente) {
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps = con.prepareStatement(
                     "INSERT INTO utente (username, passwordhash, nome, email, admin) VALUES(?,?,?,?,?)",
@@ -138,6 +138,8 @@ public class UtenteDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
+        return true;
 
 
     }

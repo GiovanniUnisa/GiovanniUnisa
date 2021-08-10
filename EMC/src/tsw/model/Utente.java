@@ -13,6 +13,18 @@ public class Utente {
 	private String email;
 	private boolean admin;
 
+	public Utente() {
+	}
+
+	public Utente(int id, String username, String passwordhash, String nome, String email, boolean admin) {
+		this.id = id;
+		this.username = username;
+		this.passwordhash = passwordhash;
+		this.nome = nome;
+		this.email = email;
+		this.admin = admin;
+	}
+
 	public int getId() {
 		return id;
 	}

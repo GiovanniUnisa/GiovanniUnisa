@@ -29,7 +29,16 @@ public class CategoriaDAO {
         }
     }
 
-    public void doSave(Categoria categoria) {
+    public int somma(int a, int b) {
+
+        int c = a + b;
+        return c;
+
+
+    }
+
+
+    public int doSave(Categoria categoria) {
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps = con.prepareStatement("INSERT INTO categoria (nome, descrizione) VALUES(?,?)",
                     Statement.RETURN_GENERATED_KEYS);
@@ -41,8 +50,10 @@ public class CategoriaDAO {
             ResultSet rs = ps.getGeneratedKeys();
             rs.next();
             categoria.setId(rs.getInt(1));
+            return 1;
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            return 0;
         }
     }
 
