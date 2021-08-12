@@ -135,16 +135,17 @@ public class UtenteDAO {
             ResultSet rs = ps.getGeneratedKeys();
             rs.next();
             utente.setId(rs.getInt(1));
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
 
-        return true;
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
 
 
     }
 
-    public void doUpdate(String username, String nome, String email, int id) {
+    public int doUpdate(String username, String nome, String email, int id) {
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps = con.prepareStatement("UPDATE utente SET username=?, nome=?, email=?  WHERE id=?");
             ps.setString(1, username);
@@ -155,20 +156,26 @@ public class UtenteDAO {
                 throw new RuntimeException("Errore nella update");
             }
 
+            return 1;
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            return 0;
         }
     }
 
-    public void doDelete(int id) {
+    public int doDelete(int id) {
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps = con.prepareStatement("DELETE FROM utente WHERE id=?");
             ps.setInt(1, id);
             if (ps.executeUpdate() != 1) {
                 throw new RuntimeException("Errore nella cancellazione");
             }
+
+            return 1;
+
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            return 0;
         }
     }
 

@@ -28,7 +28,7 @@ public class LoginDAO{
 		}
 	}
 
-	public void doSave(Login login) {
+	public int doSave(Login login) {
 		try (Connection con = ConPool.getConnection()) {
 			PreparedStatement ps = con.prepareStatement(
 					"INSERT INTO login (id, idutente, token) VALUES(?, ?,?)", Statement.RETURN_GENERATED_KEYS);
@@ -40,12 +40,14 @@ public class LoginDAO{
 				throw new RuntimeException("Errore nella query di inserimento");
 			}
 			login.setId(id);
+			return 1;
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
+			e.printStackTrace();
+			return 0;
 		}
 	}
 
-	public void doUpdate(Login login) {
+	public int doUpdate(Login login) {
 		try (Connection con = ConPool.getConnection()) {
 			PreparedStatement ps = con.prepareStatement("UPDATE login SET idutente=?, token=? WHERE id=?");
 			ps.setInt(1, login.getIdutente());
@@ -54,20 +56,24 @@ public class LoginDAO{
 			if (ps.executeUpdate() != 1) {
 				throw new RuntimeException("UPDATE error.");
 			}
+			return 1;
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
+			e.printStackTrace();
+			return 0;
 		}
 	}
 
-	public void doDelete(String id) {
+	public int doDelete(String id) {
 		try (Connection con = ConPool.getConnection()) {
 			PreparedStatement ps = con.prepareStatement("DELETE FROM login WHERE id=?");
 			ps.setString(1, id);
 			if (ps.executeUpdate() != 1) {
 				throw new RuntimeException("Errore nella query di cancellazione");
 			}
+			return 1;
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
+			e.printStackTrace();
+			return 0;
 		}
 	}
 }

@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="org.springframework:beandoc:0.7.0" type="repository">
+    <properties maven-id="org.springframework:beandoc:0.7.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/beandoc-0.7.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.0.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-beans-1.2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-core-1.2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-collections-3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jdom-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

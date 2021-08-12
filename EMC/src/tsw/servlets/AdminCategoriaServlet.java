@@ -15,12 +15,13 @@ import tsw.model.CategoriaDAO;
 
 
 @WebServlet("/AdminCategoria")
+
 public class AdminCategoriaServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private final CategoriaDAO categoriaDAO = new CategoriaDAO();
+    private CategoriaDAO categoriaDAO = new CategoriaDAO();
 
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         doGet(request, response);
     }

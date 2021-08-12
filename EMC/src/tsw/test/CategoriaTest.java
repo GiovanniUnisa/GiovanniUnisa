@@ -16,12 +16,24 @@ class CategoriaTest {
         String descrizione = "La gallina";
 
         Categoria categoria = new Categoria(id, nome, descrizione);
+        Categoria categoria1 = new Categoria(id, nome, descrizione);
+        String test = categoria.toString();
+        String test1 = categoria1.toString();
 
-        String intTest = categoria.toString();
+
         assertEquals(id, categoria.getId());
         assertEquals(nome, categoria.getNome());
         assertEquals(descrizione, categoria.getDescrizione());
-        assertEquals(intTest, categoria.toString());
+        assertEquals(test, categoria.toString());
+
+        categoria1.setId(id);
+        categoria1.setNome(nome);
+        categoria1.setDescrizione(descrizione);
+        assertEquals(nome, categoria1.getNome());
+        assertEquals(descrizione, categoria1.getDescrizione());
+        assertEquals(test1, categoria1.toString());
+
+
 
 
     }

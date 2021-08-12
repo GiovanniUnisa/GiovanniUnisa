@@ -7,19 +7,19 @@ import java.util.List;
 public class OrdineDAO {
 
 
-    public void doSave(String indirizzo, int idu, String prezzo) {
+    public int doSave(String indirizzo, int idu, String prezzo) {
 
-        Ordine ordine=new Ordine();
-
+        Ordine ordine = new Ordine();
 
         try (Connection con = ConPool.getConnection()) {
 
             PreparedStatement ps = con.prepareStatement(
-                    "INSERT INTO ordine (prezzo,indirizzo) VALUES(?,?)",
+                    "INSERT INTO ordine (prezzo,indirizzo,idutente) VALUES(?,?,?)",
                     Statement.RETURN_GENERATED_KEYS);
 
             ps.setString(1, prezzo);
-            ps.setString(2,indirizzo);
+            ps.setString(2, indirizzo);
+            ps.setInt(3, idu);
             if (ps.executeUpdate() != 1) {
                 throw new RuntimeException("Errone nella query di inserimento");
             }
@@ -30,25 +30,17 @@ public class OrdineDAO {
             int id = rs.getInt(1);
             ordine.setId(id);
 
-
-            PreparedStatement psO = con
-                    .prepareStatement("INSERT INTO utente_ordine (idutente, idordine) VALUES (?,?)");
-
-                psO.setInt(1,idu);
-                psO.setInt(2,id);
-
-            if (psO.executeUpdate() != 1) {
-                throw new RuntimeException("Errore nella query di inserimneto relazione molti a molti");
-            }
+            return 1;
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            return 0;
         }
     }
 
     public List<Ordine> doRetrieveByUtente(int utente) {
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps = con.prepareStatement(
-                    "SELECT id, prezzo, indirizzo FROM ordine LEFT JOIN utente_ordine ON id=idordine WHERE idutente=? ");
+                    "SELECT id, prezzo, indirizzo FROM ordine WHERE idutente=? ");
             ps.setInt(1, utente);
             ArrayList<Ordine> ordini = new ArrayList<>();
             ResultSet rs = ps.executeQuery();
@@ -57,7 +49,6 @@ public class OrdineDAO {
                 o.setId(rs.getInt(1));
                 o.setPrezzotot(rs.getString(2));
                 o.setIndirizzo(rs.getString(3));
-                o.setUtenti(getUtenti(con,o.getId()));
                 ordini.add(o);
             }
             return ordini;
@@ -84,7 +75,6 @@ public class OrdineDAO {
         }
         return utenti;
     }
-
 
 
 }

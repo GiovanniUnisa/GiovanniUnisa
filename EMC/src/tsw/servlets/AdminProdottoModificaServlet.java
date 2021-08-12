@@ -1,6 +1,7 @@
 package tsw.servlets;
 
 import tsw.model.Categoria;
+import tsw.model.CategoriaDAO;
 import tsw.model.Prodotto;
 import tsw.model.ProdottoDAO;
 
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 
@@ -48,6 +50,7 @@ public class AdminProdottoModificaServlet extends HttpServlet {
                 String prezzoCent = request.getParameter("prezzoCent");
                 String iv = request.getParameter("iva");
 
+
                 if (nome != null && descrizione != null && prezzoCent != null && iv != null) {
 
                     if (rb == null) {
@@ -69,24 +72,22 @@ public class AdminProdottoModificaServlet extends HttpServlet {
                     }
 
 
-                    // modifica/aggiunta prodotto
+                    //modifica prodotto
                     prodotto = new Prodotto();
                     prodotto.setNome(nome);
                     prodotto.setDescrizione(descrizione);
                     prodotto.setPrezzoBase(Long.parseLong(prezzoCent));
                     prodotto.setIva(Integer.parseInt(iv));
-
-                    String[] categorie = request.getParameterValues("categorie");
-                    prodotto.setCategorie(categorie != null ? Arrays.stream(categorie).map(id -> {
-                        Categoria c = new Categoria();
-                        c.setId(Integer.parseInt(id));
-                        return c;
-                    }).collect(Collectors.toList()) : Collections.emptyList());
-
+                    prodotto.setIdcategoria(Integer.parseInt(rb));
                     if ((prodottoDAO.doRetrieveByNomeSingolo(nome) != null) && (prodottoDAO.doRetrieveByDescrizione(descrizione) != null)
                             && (prodottoDAO.doRetrieveByPrezzo(Long.parseLong(prezzoCent)) != null) && (prodottoDAO.doRetrieveByIva(Integer.parseInt(iv)) != null)) {
                         throw new MyServletException("Non hai modificato alcun parametro! Riprova");
                     }
+
+
+                    prodottoDAO.doSaveModifica(prodotto);
+                    prodottoDAO.doDelete(Integer.parseInt(idstr));
+
 
                     prodotto.setId(Integer.parseInt(idstr));
                     prodottoDAO.doUpdate(prodotto);

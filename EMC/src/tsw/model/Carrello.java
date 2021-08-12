@@ -9,7 +9,10 @@ public class Carrello {
 		private Prodotto prodotto;
 		private int quantita;
 
-		private ProdottoQuantita(Prodotto prodotto, int quantita) {
+		public ProdottoQuantita() {
+		}
+
+		public ProdottoQuantita(Prodotto prodotto, int quantita) {
 			this.prodotto = prodotto;
 			this.quantita = quantita;
 		}

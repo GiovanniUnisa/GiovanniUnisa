@@ -3,40 +3,77 @@ package tsw.test;
 import org.junit.Test;
 import tsw.model.Categoria;
 import tsw.model.CategoriaDAO;
+import tsw.model.ConPool;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
 public class CategoriaDAOTest {
 
+    CategoriaDAO categoriaDAO = new CategoriaDAO();
+
+
     @Test
     public void doRetrieveAll() {
+
+        List<Categoria> categoria = new ArrayList<>();
+        assertNotEquals(categoria, categoriaDAO.doRetrieveAll());
+
     }
+
 
     @Test
     public void doSave() {
 
 
-        Categoria categoria = new Categoria(111, "Categoria1", "Descrione1");
-        CategoriaDAO categoriaDAO = new CategoriaDAO();
-        int pippo = categoriaDAO.doSave(categoria);
+        Categoria categoriaValida = new Categoria(10, "Categoria1", "Descrione1");
+        Categoria categoriaNonValida = new Categoria(11, "Categoria1", "Descrione1");
 
-        assertEquals(11, pippo);
+        int succ = categoriaDAO.doSave(categoriaValida);
+        assertEquals(1, succ);
+
 
     }
 
     @Test
     public void doUpdate() {
+
+        Categoria categoriaUpdate = new Categoria(4, "CategoriaNuova", "DescrizioneNuova");
+        boolean succ = categoriaDAO.doUpdate(categoriaUpdate);
+
+        assertEquals(true, succ);
+
+
     }
 
     @Test
     public void doDelete() {
+
+        int succ = categoriaDAO.doDelete(3);
+        assertEquals(1, succ);
+
     }
 
     @Test
     public void doRetrieveByNome() {
+
+        Categoria categoria = new Categoria();
+
+        categoria = categoriaDAO.doRetrieveByNome("Ottone");
+        assertEquals("Ottone", categoria.getNome());
+
     }
 
     @Test
     public void doRetrieveByDescrizione() {
+
+        Categoria categoria = new Categoria();
+
+        categoria = categoriaDAO.doRetrieveByDescrizione("Prodotti in Bronzo");
+        assertEquals("Prodotti in Bronzo", categoria.getDescrizione());
+
+
     }
 }

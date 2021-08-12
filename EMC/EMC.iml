@@ -116,5 +116,10 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="org.apache.tomcat:annotations-api:6.0.53" level="application" />
+    <orderEntry type="library" name="org.apache.tomcat:tomcat-juli:7.0.22" level="application" />
+    <orderEntry type="library" name="org.springframework:spring-mock:2.0.8" level="application" />
+    <orderEntry type="library" name="com.google.code.maven-play-plugin.com.google.code.eamelink-mockito:mockito-all:1.9.1-20110911" level="project" />
+    <orderEntry type="library" name="org.springframework:beandoc:0.7.0" level="project" />
+    <orderEntry type="library" name="org.springframework:spring-jdbc:4.1.5.RELEASE" level="project" />
   </component>
 </module>

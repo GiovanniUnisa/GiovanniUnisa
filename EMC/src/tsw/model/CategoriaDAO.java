@@ -57,7 +57,8 @@ public class CategoriaDAO {
         }
     }
 
-    public void doUpdate(Categoria categoria) {
+
+    public boolean doUpdate(Categoria categoria) {
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps = con.prepareStatement("UPDATE categoria SET nome=?, descrizione=? WHERE id=?");
             ps.setString(1, categoria.getNome());
@@ -66,20 +67,24 @@ public class CategoriaDAO {
             if (ps.executeUpdate() != 1) {
                 throw new RuntimeException("Errore nella query di modifica");
             }
+            return true;
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+
+            return false;
         }
     }
 
-    public void doDelete(int id) {
+    public int doDelete(int id) {
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps = con.prepareStatement("DELETE FROM categoria WHERE id=?");
             ps.setInt(1, id);
             if (ps.executeUpdate() != 1) {
                 throw new RuntimeException("Errore nella query di cancellazione");
             }
+            return 1;
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            return 0;
         }
     }
 

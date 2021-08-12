@@ -7,6 +7,14 @@ public class Login {
 	private int idutente;
 	private String token;
 
+	public Login(String id, int idutente, String token) {
+		this.id = id;
+		this.idutente = idutente;
+		this.token = token;
+	}
+
+	public Login() {
+	}
 
 	public String getId() {
 		return id;

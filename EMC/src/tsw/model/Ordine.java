@@ -8,7 +8,19 @@ public class Ordine {
     private int id;
     private String indirizzo;
     private String prezzotot;
-    private List<Utente> utenti;
+    private Utente utente;
+
+    public Ordine(int id, String indirizzo, String prezzotot, Utente utente) {
+        this.id = id;
+        this.indirizzo = indirizzo;
+        this.prezzotot = prezzotot;
+        this.utente = utente;
+    }
+
+    public Ordine() {
+
+
+    }
 
     public int getId() {
         return id;
@@ -34,12 +46,12 @@ public class Ordine {
         this.prezzotot = prezzotot;
     }
 
-    public List<Utente> getUtenti() {
-        return utenti;
+    public Utente getUtente() {
+        return utente;
     }
 
-    public void setUtenti(List<Utente> utenti) {
-        this.utenti = utenti;
+    public void setUtente(Utente utenti) {
+        this.utente = utenti;
     }
 
     @Override
@@ -48,7 +60,7 @@ public class Ordine {
                 "id=" + id +
                 ", indirizzo='" + indirizzo + '\'' +
                 ", prezzotot='" + prezzotot + '\'' +
-                ", utenti=" + utenti +
+                ", utenti=" + utente +
                 '}';
     }
 
@@ -60,11 +72,11 @@ public class Ordine {
         return id == ordine.id &&
                 Objects.equals(indirizzo, ordine.indirizzo) &&
                 Objects.equals(prezzotot, ordine.prezzotot) &&
-                Objects.equals(utenti, ordine.utenti);
+                Objects.equals(utente, ordine.utente);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, indirizzo, prezzotot, utenti);
+        return Objects.hash(id, indirizzo, prezzotot, utente);
     }
 }

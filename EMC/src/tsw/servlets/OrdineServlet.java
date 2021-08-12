@@ -14,20 +14,24 @@ import java.io.IOException;
 @WebServlet("/Ordine")
 public class OrdineServlet extends HttpServlet {
 
-    OrdineDAO ordineDAO=new OrdineDAO();
+    OrdineDAO ordineDAO = new OrdineDAO();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         doGet(request, response);
+
+
     }
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+
+
         if (request.getSession().getAttribute("utente") == null) {
             throw new MyServletException("Utente non loggato.");
-        }
-        else {
+        } else {
             int id = Integer.parseInt(request.getParameter(("id")));
             String prezzo = request.getParameter("prezzo");
             String indirizzo = request.getParameter("indirizzo");

@@ -67,23 +67,16 @@ public class AdminProdottoServlet extends HttpServlet {
                     }
 
 
-                    // modifica/aggiunta prodotto
+                    //aggiunta prodotto
                     prodotto = new Prodotto();
                     prodotto.setNome(nome);
                     prodotto.setDescrizione(descrizione);
                     prodotto.setPrezzoBase(Long.parseLong(prezzoCent));
                     prodotto.setIva(Integer.parseInt(iv));
 
-                    String[] categorie = request.getParameterValues("categorie");
-                    prodotto.setCategorie(categorie != null ? Arrays.stream(categorie).map(id -> {
-                        Categoria c = new Categoria();
-                        c.setId(Integer.parseInt(id));
-                        return c;
-                    }).collect(Collectors.toList()) : Collections.emptyList());
+                    prodotto.setIdcategoria(Integer.parseInt(rb));
 
                     if (idstr.isEmpty()) { // aggiunta nuovo prodotto
-
-
 
 
                         if (prodottoDAO.doRetrieveByNomeSingolo(nome) != null) {

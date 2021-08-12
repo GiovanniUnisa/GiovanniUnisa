@@ -27,6 +27,12 @@ public class MieOrdiniServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        Utente utente = (Utente) request.getSession().getAttribute("utente");
+        if (utente == null) {
+            throw new MyServletException("Utente non autorizzato");
+        }
+
+
 
         int id = Integer.parseInt(request.getParameter("id"));
 

@@ -1,6 +1,7 @@
 package tsw.model;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Prodotto {
 	private int id;
@@ -8,7 +9,19 @@ public class Prodotto {
 	private String descrizione;
 	private long prezzoBase;
 	private int iva;
-	private List<Categoria> categorie;
+	private int idcategoria;
+
+	public Prodotto(int id, String nome, String descrizione, long prezzoBase, int iva, int idcategoria) {
+		this.id = id;
+		this.nome = nome;
+		this.descrizione = descrizione;
+		this.prezzoBase = prezzoBase;
+		this.iva = iva;
+		this.idcategoria = idcategoria;
+	}
+
+	public Prodotto() {
+	}
 
 	public int getId() {
 		return id;
@@ -50,61 +63,30 @@ public class Prodotto {
 		return String.format("%.2f", (prezzoBase / 100.)+((prezzoBase/100.)*iva)/100.);
 	}
 
-	public List<Categoria> getCategorie() {
-		return categorie;
+	public int getIdcategoria() {
+		return idcategoria;
 	}
 
-	public void setCategorie(List<Categoria> categorie) {
-		this.categorie = categorie;
+	public void setIdcategoria(int categoria) {
+		this.idcategoria = categoria;
 	}
 
 	@Override
 	public String toString() {
 		return "Prodotto [id=" + id + ", nome=" + nome + ", descrizione=" + descrizione + ", prezzoBase=" + prezzoBase
-				+ ", categorie=" + categorie + "]";
+				+ ", categorie=" + idcategoria + "]";
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Prodotto prodotto = (Prodotto) o;
+		return id == prodotto.id && prezzoBase == prodotto.prezzoBase && iva == prodotto.iva && idcategoria == prodotto.idcategoria && Objects.equals(nome, prodotto.nome) && Objects.equals(descrizione, prodotto.descrizione);
 	}
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((categorie == null) ? 0 : categorie.hashCode());
-		result = prime * result + ((descrizione == null) ? 0 : descrizione.hashCode());
-		result = prime * result + id;
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-		result = prime * result + (int) (prezzoBase ^ (prezzoBase >>> 32));
-		return result;
+		return Objects.hash(id, nome, descrizione, prezzoBase, iva, idcategoria);
 	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Prodotto other = (Prodotto) obj;
-		if (categorie == null) {
-			if (other.categorie != null)
-				return false;
-		} else if (!categorie.equals(other.categorie))
-			return false;
-		if (descrizione == null) {
-			if (other.descrizione != null)
-				return false;
-		} else if (!descrizione.equals(other.descrizione))
-			return false;
-		if (id != other.id)
-			return false;
-		if (nome == null) {
-			if (other.nome != null)
-				return false;
-		} else if (!nome.equals(other.nome))
-			return false;
-		if (prezzoBase != other.prezzoBase)
-			return false;
-		return true;
-	}
-
 }

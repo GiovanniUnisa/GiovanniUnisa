@@ -15,7 +15,7 @@
             <label>Categorie</label>
             <c:forEach items="${categorie}" var="categoria">
                 <input type="radio" name="categorie" value="${categoria.id}"
-                       <c:if test="${prodotto.categorie.stream().anyMatch(c -> c.id == categoria.id).orElse(false)}">checked</c:if>><label>${categoria.nome}</label>
+                       <c:if test="${prodotto.idcategoria.stream().anyMatch(c -> c.id == categoria.id).orElse(false)}">checked</c:if>><label>${categoria.nome}</label>
             </c:forEach>
             <label>Nome</label>
             <input type="text" name="nome" value="${prodotto.nome}">
