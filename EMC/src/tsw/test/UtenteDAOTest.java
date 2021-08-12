@@ -74,7 +74,7 @@ public class UtenteDAOTest {
     @Test
     public void doUpdate() {
 
-        int succ = utenteDAO.doUpdate("Prova1","Email1", "Prova1",1);
+        int succ = utenteDAO.doUpdate("Prova1","Email1", "Prova1",2);
         assertEquals(1, succ);
 
 

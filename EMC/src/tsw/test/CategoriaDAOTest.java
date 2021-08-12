@@ -51,7 +51,7 @@ public class CategoriaDAOTest {
     @Test
     public void doDelete() {
 
-        int succ = categoriaDAO.doDelete(3);
+        int succ = categoriaDAO.doDelete(7);
         assertEquals(1, succ);
 
     }
@@ -71,8 +71,8 @@ public class CategoriaDAOTest {
 
         Categoria categoria = new Categoria();
 
-        categoria = categoriaDAO.doRetrieveByDescrizione("Prodotti in Bronzo");
-        assertEquals("Prodotti in Bronzo", categoria.getDescrizione());
+        categoria = categoriaDAO.doRetrieveByDescrizione("Prodotti in Ottone");
+        assertEquals("Prodotti in Ottone", categoria.getDescrizione());
 
 
     }

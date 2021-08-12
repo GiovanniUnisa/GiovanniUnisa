@@ -50,7 +50,7 @@ public class ProdottoDAOTest {
     public void doUpdate() {
 
 
-        Prodotto prodotto= new Prodotto(11,"nome","descrizione", 3, 2, 2);
+        Prodotto prodotto= new Prodotto(3,"nome","descrizione", 3, 2, 2);
         boolean succ = prodottoDAO.doUpdate(prodotto);
 
         assertEquals(true, succ);
@@ -60,7 +60,7 @@ public class ProdottoDAOTest {
     @Test
     public void doDelete() {
 
-        int pippo = prodottoDAO.doDelete(1);
+        int pippo = prodottoDAO.doDelete(4);
         assertEquals(1, pippo);
 
     }
