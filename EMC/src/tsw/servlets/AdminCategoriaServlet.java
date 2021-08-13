@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import tsw.model.Categoria;
 import tsw.model.CategoriaDAO;
@@ -28,10 +29,13 @@ public class AdminCategoriaServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        MyServletException.checkAdmin(request);
+
+
 
         String idstr = request.getParameter("id");
+
         if (idstr != null) {
+            request.setAttribute("notifica", "aa");
 
             List<Categoria> categorie = ((List<Categoria>) getServletContext().getAttribute("categorie"));
 
