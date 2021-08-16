@@ -33,7 +33,7 @@ public class ProfiloServlet extends HttpServlet {
 
         request.setAttribute("utente", utente);
 
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/jsp/informazioniutente.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/jsp/informazioniUtente.jsp");
         requestDispatcher.forward(request, response);
 
     }

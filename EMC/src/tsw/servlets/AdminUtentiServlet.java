@@ -32,7 +32,7 @@ public class AdminUtentiServlet extends HttpServlet {
 		List<Utente> utenti = utenteDAO.doRetrieveAll();
 		request.setAttribute("utenti", utenti);
 
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/jsp/adminutenti.jsp");
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/jsp/adminUtenti.jsp");
 		requestDispatcher.forward(request, response);
 	}
 

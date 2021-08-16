@@ -57,24 +57,6 @@ public class OrdineDAO {
         }
     }
 
-    private List<Utente> getUtenti(Connection con, int idOrdine) throws SQLException {
-        PreparedStatement ps = con.prepareStatement(
-                "SELECT id, username, passwordhash, nome, email, admin FROM utente LEFT JOIN utente_ordine ON id=idutente WHERE idordine=?");
-        ps.setInt(1, idOrdine);
-        ArrayList<Utente> utenti = new ArrayList<>();
-        ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            Utente p = new Utente();
-            p.setId(rs.getInt(1));
-            p.setUsername(rs.getString(2));
-            p.setPasswordhash(rs.getString(3));
-            p.setNome(rs.getString(4));
-            p.setEmail(rs.getString(5));
-            p.setAdmin(rs.getBoolean(6));
-            utenti.add(p);
-        }
-        return utenti;
-    }
 
 
 }

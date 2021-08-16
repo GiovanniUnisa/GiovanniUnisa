@@ -91,7 +91,7 @@ public class AdminProdottoServlet extends HttpServlet {
             }
         }
 
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/jsp/adminprodotto.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/jsp/adminProdotto.jsp");
         requestDispatcher.forward(request, response);
     }
 

@@ -96,7 +96,7 @@ public class AdminCategoriaServlet extends HttpServlet {
         }
 
 
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/jsp/admincategoria.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/jsp/adminCategoria.jsp");
         requestDispatcher.forward(request, response);
     }
 
