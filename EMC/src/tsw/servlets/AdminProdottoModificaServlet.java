@@ -99,7 +99,7 @@ public class AdminProdottoModificaServlet extends HttpServlet {
         int id = Integer.parseInt(idstr);
         request.setAttribute("id", id);
 
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/jsp/adminprodottomodifica.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/jsp/adminProdottoModifica.jsp");
         requestDispatcher.forward(request, response);
     }
 
