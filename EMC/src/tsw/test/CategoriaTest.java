@@ -11,6 +11,7 @@ class CategoriaTest {
     void testCategoriaBean() {
 
 
+
         int id = 1;
         String nome = "Gina";
         String descrizione = "La gallina";
